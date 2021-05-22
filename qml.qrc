@@ -1,5 +1,20 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>qtquickcontrols2.conf</file>
+        <file>Open_Sans/OpenSans-Bold.ttf</file>
+        <file>Open_Sans/OpenSans-BoldItalic.ttf</file>
+        <file>Open_Sans/OpenSans-ExtraBold.ttf</file>
+        <file>Open_Sans/OpenSans-ExtraBoldItalic.ttf</file>
+        <file>Open_Sans/OpenSans-Italic.ttf</file>
+        <file>Open_Sans/OpenSans-Light.ttf</file>
+        <file>Open_Sans/OpenSans-LightItalic.ttf</file>
+        <file>Open_Sans/OpenSans-Regular.ttf</file>
+        <file>Open_Sans/OpenSans-SemiBold.ttf</file>
+        <file>Open_Sans/OpenSans-SemiBoldItalic.ttf</file>
+        <file>PrettyText.qml</file>
+        <file>PrettyComponent.qml</file>
+        <file>PrettyButton.qml</file>
+        <file>AddItemWindow.qml</file>
     </qresource>
 </RCC>

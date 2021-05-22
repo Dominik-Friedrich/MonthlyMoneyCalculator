@@ -3,6 +3,7 @@
 
 #include <QLocale>
 #include <QTranslator>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
@@ -11,6 +12,12 @@ int main(int argc, char *argv[])
 #endif
 
     QGuiApplication app(argc, argv);
+
+    int fontID = QFontDatabase::addApplicationFont(":/Open_Sans/OpenSans-Regular.ttf");
+    QString family = QFontDatabase::applicationFontFamilies(fontID).at(0);
+    QFont googleFont(family);
+    app.setFont(googleFont);
+
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
