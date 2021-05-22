@@ -32,6 +32,7 @@ Component {
                 text: amount
                 width: 80
             }
+
             PrettyText {
                 width: parent.width - amountText.width - 2 * parent.spacing - removeCheckBox.width - parent.leftPadding - parent.rightPadding
                 text: description
@@ -39,6 +40,7 @@ Component {
 
             CheckBox {
                 id: removeCheckBox
+                visible: (isLast) ? false : true
             }
         }
     }

@@ -4,6 +4,7 @@
 #include <QLocale>
 #include <QTranslator>
 #include <QFontDatabase>
+#include "myobject.h"
 
 int main(int argc, char *argv[])
 {
@@ -12,6 +13,8 @@ int main(int argc, char *argv[])
 #endif
 
     QGuiApplication app(argc, argv);
+
+    qmlRegisterType<MyObject>("com.myself", 1, 0, "MyObject");
 
     int fontID = QFontDatabase::addApplicationFont(":/Open_Sans/OpenSans-Regular.ttf");
     QString family = QFontDatabase::applicationFontFamilies(fontID).at(0);

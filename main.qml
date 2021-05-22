@@ -5,6 +5,8 @@ import QtQuick.Controls 2.12
 
 Window {
     id: mainWindow
+    property variant win;
+
     width: 490
     height: 620
     minimumHeight: 620
@@ -14,6 +16,10 @@ Window {
 
     visible: true
     title: qsTr("Monthly Money Calculator")
+
+    function addItem(newElement) {
+       listView.model.insert(listModel.count - 1, newElement)
+    }
 
     Pane {
         anchors.fill: parent
@@ -44,6 +50,12 @@ Window {
             anchors.left: parent.left
 
             text: qsTr("Add")
+
+            onClicked: popup.open()
+        }
+
+        AddItemWindow {
+            id: popup
         }
 
         // Remove Button
