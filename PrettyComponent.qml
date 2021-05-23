@@ -27,13 +27,23 @@ Component {
             leftPadding: 25
             rightPadding: 25
 
+
+
             PrettyText {
                 id: amountText
-                text: amount
+                property bool negative: (convertToNumber(amount) < 0) ? true : false
+                color: (negative) ? "red" : "green"
+                text: (negative) ? amount : "+"+amount
                 width: 80
+
+                function convertToNumber(string)
+                {
+                    return parseInt(string)
+                }
             }
 
             PrettyText {
+                id: descriptionText
                 width: parent.width - amountText.width - 2 * parent.spacing - removeCheckBox.width - parent.leftPadding - parent.rightPadding
                 text: description
             }
@@ -41,6 +51,10 @@ Component {
             CheckBox {
                 id: removeCheckBox
                 visible: (isLast) ? false : true
+
+                onCheckedChanged: {
+
+                }
             }
         }
     }

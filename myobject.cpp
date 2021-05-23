@@ -1,18 +1,29 @@
 #include "myobject.h"
 
-MyObject::MyObject(QObject *parent) : QObject(parent)
+MyDatastructures::MyObject::MyObject(QObject *parent) : QObject(parent)
 {
-
+     _pItemList = new std::vector<MyDatastructures::Item>();
+     _dMonthlyAllowance = 0;
 }
 
-Q_INVOKABLE QString MyObject::addNewItem(QString sAmount, int iCycle, QString sDescription)
+MyDatastructures::MyObject::~MyObject()
 {
+    delete  _pItemList;
+}
+
+Q_INVOKABLE QString MyDatastructures::MyObject::addNewItem(QString sAmount, int iCycle, QString sDescription)
+{
+    double dAmount = sAmount.toDouble();
+    MyDatastructures::Item item(dAmount, iCycle, sDescription.toStdString());
+
+    _pItemList->push_back(item);
+    _dMonthlyAllowance += dAmount;
+
     QString string = sAmount+" "+QString::number(iCycle)+" "+sDescription;
-    // Something
     return string;
 }
 
-void MyObject::addToListModel(QString& sAmount, int iCycle, QString& sDescription)
+void MyDatastructures::MyObject::addToListModel(QString& sAmount, int iCycle, QString& sDescription)
 {
-
+    // I don't think I'll use this
 }

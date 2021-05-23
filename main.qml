@@ -18,7 +18,20 @@ Window {
     title: qsTr("Monthly Money Calculator")
 
     function addItem(newElement) {
-       listView.model.insert(listModel.count - 1, newElement)
+        listView.model.insert(listModel.count - 1, newElement)
+    }
+
+    function removeItems() {
+        console.log("Count before remove: " + listModel.count)
+        for (var i = 0; i < listModel.count; i++)
+        {
+            listView.model.get(i).getChecked()
+            if (object.getChecked())
+            {
+                listModel.remove(i);
+            }
+        }
+        console.log("Count after remove: " + listModel.count)
     }
 
     Pane {
@@ -63,7 +76,10 @@ Window {
             anchors.bottom: parent.bottom
             anchors.right: parent.right
 
+
             text: qsTr("Remove")
+
+            onClicked: removeItems()
         }
 
     }

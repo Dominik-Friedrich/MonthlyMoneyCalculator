@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    qmlRegisterType<MyObject>("com.myself", 1, 0, "MyObject");
+    qmlRegisterType<MyDatastructures::MyObject>("com.myself", 1, 0, "MyObject");
 
     int fontID = QFontDatabase::addApplicationFont(":/Open_Sans/OpenSans-Regular.ttf");
     QString family = QFontDatabase::applicationFontFamilies(fontID).at(0);
