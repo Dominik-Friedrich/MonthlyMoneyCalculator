@@ -17,7 +17,6 @@ namespace MyDatastructures
         Item(double dAmount, Cycle eCycle, std::string& sDescription);
         Item(double dAmount, int iCycle, std::string sDescription);
 
-
         static MyDatastructures::Cycle parseIntToCycle(int iCycle);
     };
 }

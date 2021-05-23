@@ -15,6 +15,6 @@
         <file>PrettyText.qml</file>
         <file>PrettyComponent.qml</file>
         <file>PrettyButton.qml</file>
-        <file>AddItemWindow.qml</file>
+        <file>AddItemPopup.qml</file>
     </qresource>
 </RCC>

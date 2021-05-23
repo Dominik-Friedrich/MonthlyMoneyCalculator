@@ -11,12 +11,10 @@ namespace MyDatastructures
     {
         Q_OBJECT
         std::vector<MyDatastructures::Item>* _pItemList;
-        double _dMonthlyAllowance;
     public:
         explicit MyObject(QObject *parent = nullptr);
         ~MyObject();
         Q_INVOKABLE QString addNewItem(QString sAmount, int iCycle, QString sDescription);
-        void addToListModel(QString& sAmount, int iCycle, QString& sDescription);
     signals:
 
     };

@@ -5,7 +5,7 @@ import QtQuick.Controls 2.12
 
 Window {
     id: mainWindow
-    property variant win;
+    property double monthlyAllowance: 0
 
     width: 490
     height: 620
@@ -22,65 +22,100 @@ Window {
     }
 
     function removeItems() {
-        console.log("Count before remove: " + listModel.count)
-        for (var i = 0; i < listModel.count; i++)
+        for (var i = listView.count - 1; i >= 0; i--)
         {
-            listView.model.get(i).getChecked()
-            if (object.getChecked())
+            if (listView.itemAt(i).isChecked)
             {
-                listModel.remove(i);
+                listModel.remove(i)
             }
         }
-        console.log("Count after remove: " + listModel.count)
     }
 
-    Pane {
+    AddItemPopup {
+        id: popup
+    }
+
+    Column {
         anchors.fill: parent
 
-        ListModel {
-            id: listModel
-            ListElement { amount: "200"; description: "Moneten" }
-            ListElement { amount: "4.99"; description: "Spotify" }
-            ListElement { amount: "25"; description: "ggggggggggggggggggggggggggggggggggggify" }
+        Pane {
+            width: parent.width
+            height: parent.height - buttonPane.height
+
+            ListModel {
+                id: listModel
+                ListElement { amount: "200"; description: "Moneten"}
+                ListElement { amount: "4.99"; description: "Spotify" }
+                ListElement { amount: "25"; description: "ggggggggggggggggggggggggggggggggggggify" }
+                ListElement { amount: "200"; description: "Moneten" }
+                ListElement { amount: "4.99"; description: "Spotify" }
+                ListElement { amount: "25"; description: "1" }
+                ListElement { amount: "25"; description: "2" }
+                ListElement { amount: "25"; description: "3" }
+                ListElement { amount: "25"; description: "4" }
+                ListElement { amount: "25"; description: "5" }
+                ListElement { amount: "25"; description: "6" }
+                ListElement { amount: "25"; description: "7" }
+                ListElement { amount: "25"; description: "8" }
+                ListElement { amount: "25"; description: "9" }
+                ListElement { amount: "25"; description: "10" }
+            }
+
+            PrettyComponent {
+                id: listElement
+            }
+
+            Flickable {
+                anchors.fill: parent
+                flickableDirection: Flickable.VerticalFlick
+                boundsBehavior: Flickable.StopAtBounds
+                contentHeight: repeaterColumn.implicitHeight
+                contentWidth: repeaterColumn.width
+                clip: true
+
+                Column {
+                    id: repeaterColumn
+                    anchors.fill: parent
+
+                    Repeater {
+                        id: listView
+                        model: listModel
+                        delegate: listElement
+                    }
+                }
+            }
         }
 
-        PrettyComponent {
-            id: listElement
+        Pane {
+            id: buttonPane
+            width: parent.width
+
+            Row {
+                width: parent.width
+                spacing: (width - addButton.width - addButton.width) / 3
+                leftPadding: spacing
+                rightPadding: spacing
+
+                // Add Button
+                PrettyButton {
+                    id: addButton
+                    anchors.verticalCenter: parent.verticalCenter
+
+                    text: qsTr("Add")
+
+                    onClicked: popup.open()
+                }
+
+                // Remove Button
+                PrettyButton {
+                    id: removeButton
+                    anchors.verticalCenter: parent.verticalCenter
+
+                    text: qsTr("Remove")
+
+                    onClicked: removeItems()
+                }
+            }
         }
-
-        ListView {
-            id: listView
-            anchors.fill: parent
-            model: listModel
-            delegate: listElement
-        }
-
-
-
-        // Add Button
-        PrettyButton {
-            anchors.bottom: parent.bottom
-            anchors.left: parent.left
-
-            text: qsTr("Add")
-
-            onClicked: popup.open()
-        }
-
-        AddItemWindow {
-            id: popup
-        }
-
-        // Remove Button
-        PrettyButton {
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
-
-
-            text: qsTr("Remove")
-
-            onClicked: removeItems()
-        }
-
     }
 }

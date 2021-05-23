@@ -5,6 +5,7 @@ Component {
     Column {
         width: mainWindow.width
         property bool isLast: index + 1 < listView.count ? false : true
+        property alias isChecked: removeCheckBox.checked
 
         Row {
             width: parent.width
@@ -51,10 +52,6 @@ Component {
             CheckBox {
                 id: removeCheckBox
                 visible: (isLast) ? false : true
-
-                onCheckedChanged: {
-
-                }
             }
         }
     }
