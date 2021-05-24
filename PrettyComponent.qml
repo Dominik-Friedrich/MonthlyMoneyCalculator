@@ -32,7 +32,7 @@ Component {
 
             PrettyText {
                 id: amountText
-                width: 80
+                width: 100
                 color: (negative) ? "red" : "green"
                 text: (negative) ? amount : "+"+amount
                 property bool negative: (amount < 0) ? true : false
