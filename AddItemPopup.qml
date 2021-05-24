@@ -1,6 +1,5 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.15
-import com.myself 1.0
 
 Popup {
     id:addItemWindow
@@ -13,7 +12,56 @@ Popup {
     focus: true
     closePolicy: Popup.CloseOnEscape
 
+    function addItem()
+    {
+        var factor = 1
+
+        switch(cycle.currentIndex) {
+            case 0:
+                // monthly
+                break;
+
+            case 1:
+                // daily
+                // average days used is 30
+                factor = 30
+                break;
+
+            case 2:
+                // quartaly
+                factor = 1/4
+                break;
+
+            case 3:
+                // twice a year
+                factor = 1/6
+                break;
+
+            case 4:
+                // once a year
+                factor = 1/12
+                break;
+        }
+
+        // Empty string should be interpreted as "0"
+        var _amount = "0"
+        if (!(amount.text === ""))
+        {
+            _amount = parseDouble(amount.text) * factor
+        }
+
+        mainWindow.addItem({"amount": _amount.toString(), "description": description.text})
+
+        // Reset values for next popup call
+        amount.text = ""
+        amount.focus = true
+        cycle.currentIndex = 0
+        description.text = ""
+        addItemWindow.close()
+    }
+
     Row {
+        Keys.onReturnPressed: addItemWindow.addItem()
         width: parent.width
         spacing: 20
         topPadding: parent.height / 3
@@ -23,8 +71,9 @@ Popup {
         TextField {
             id: amount
             width: 110
-            placeholderText: qsTr("Enter amount")
-            validator: RegExpValidator { regExp: /(?:(?!\d)[+|-])?\d+/ }
+            focus: true
+            placeholderText: qsTr("Amount...")
+            validator: RegExpValidator { regExp: /(?:(?!\d)[-])?\d+\.\d{0,2}/ }
         }
 
         ComboBox {
@@ -36,7 +85,7 @@ Popup {
         TextField {
             id: description
             width: 150
-            placeholderText: qsTr("Enter description")
+            placeholderText: qsTr("Description...")
         }
     }
 
@@ -48,17 +97,7 @@ Popup {
 
         text: qsTr("Add")
 
-        onClicked: {
-            // register item to cpp
-            console.log(myobject.addNewItem(amount.text, cycle.currentIndex, description.text))
-            mainWindow.addItem({"amount": amount.text, "description": description.text})
-
-            // Reset values for next popup call
-            amount.text = ""
-            cycle.currentIndex = 0
-            description.text = ""
-            addItemWindow.close()
-        }
+        onClicked: addItemWindow.addItem()
     }
 
     // Remove Button
@@ -72,9 +111,5 @@ Popup {
         onClicked: {
             addItemWindow.close()
         }
-    }
-
-    MyObject {
-        id: myobject
     }
 }

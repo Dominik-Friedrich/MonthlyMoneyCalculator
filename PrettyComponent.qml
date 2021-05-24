@@ -6,6 +6,8 @@ Component {
         width: mainWindow.width
         property bool isLast: index + 1 < listView.count ? false : true
         property alias isChecked: removeCheckBox.checked
+        property alias sAmount: amountText.text
+        visible: (listView.count === 1) ? false : true
 
         Row {
             width: parent.width
@@ -28,19 +30,12 @@ Component {
             leftPadding: 25
             rightPadding: 25
 
-
-
             PrettyText {
                 id: amountText
-                property bool negative: (convertToNumber(amount) < 0) ? true : false
+                width: 80
                 color: (negative) ? "red" : "green"
                 text: (negative) ? amount : "+"+amount
-                width: 80
-
-                function convertToNumber(string)
-                {
-                    return parseInt(string)
-                }
+                property bool negative: (amount < 0) ? true : false
             }
 
             PrettyText {
