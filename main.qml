@@ -17,9 +17,16 @@ ApplicationWindow {
     title: qsTr("Monthly Money Calculator")
 
     property double monthlyAllowance: 0
+    property string monthlyAllowanceDesc: qsTr("Monthly Allowance")
     property string datastore: ""
     property string language: "en"
-    onLanguageChanged: translationHandler.selectLanguage(mainWindow.language)
+    onLanguageChanged: {
+        translationHandler.selectLanguage(mainWindow.language)
+        listView.model.remove(listModel.count - 1)
+        var description = monthlyAllowanceDesc
+        listView.model.insert(listModel.count, {"amount": "amount_placeholder", "description": description})
+        addMonthlyAllowance(0)
+    }
 
     Component.onCompleted: {
         if (datastore) {
@@ -28,6 +35,8 @@ ApplicationWindow {
             for (var i = 0; i < datamodel.length; ++i) {
                 listModel.append(datamodel[i])
             }
+        } else {
+            reset()
         }
     }
 
@@ -72,16 +81,18 @@ ApplicationWindow {
 
     function parseDouble(string)
     {
-        return parseFloat(string);
+        var tempString = string.replace(",", ".");
+        return parseFloat(tempString);
     }
 
     function reset()
     {
-        monthlyAllowance = 0
-        for (var i = listView.count - 2; i >= 0; i--)
+        mainWindow.monthlyAllowance = 0
+        for (var i = listView.count - 1; i >= 0; i--)
         {
             listModel.remove(i)
         }
+        listView.model.insert(0, {"amount": "0", "description": mainWindow.monthlyAllowanceDesc})
     }
 
     Settings {
@@ -131,17 +142,16 @@ ApplicationWindow {
         anchors.fill: parent
 
         Pane {
+            id: mainContent
+
             width: parent.width
             height: parent.height - buttonPane.height
 
             ListModel {
                 id: listModel
-                ListElement { amount: "0"; description: qsTr("Monthly Allowance") }
+                ListElement { amount: "0"; description: "Monthly Allowance" }
             }
 
-            PrettyComponent {
-                id: listElement
-            }
 
             Flickable {
                 anchors.fill: parent
@@ -158,7 +168,12 @@ ApplicationWindow {
                     Repeater {
                         id: listView
                         model: listModel
-                        delegate: listElement
+                        delegate: PrettyComponent {
+                            draggedItemParent: mainContent
+                            onMoveItemRequested: {
+                                listModel.move(from, to, 1);
+                            }
+                        }
                     }
                 }
             }
