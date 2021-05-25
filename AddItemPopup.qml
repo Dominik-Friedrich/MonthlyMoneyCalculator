@@ -10,6 +10,7 @@ Popup {
     y: (parent.height - height) / 3
     modal: true
     focus: true
+    onClosed: resetValues()
     closePolicy: Popup.CloseOnEscape
 
     function addItem()
@@ -49,15 +50,19 @@ Popup {
         {
             _amount = parseDouble(amount.text) * factor
         }
+        _amount = Math.round(_amount * 100) / 100
 
         mainWindow.addItem({"amount": _amount.toString(), "description": description.text})
+        addItemWindow.close()
+    }
 
+    function resetValues()
+    {
         // Reset values for next popup call
         amount.text = ""
         amount.focus = true
         cycle.currentIndex = 0
         description.text = ""
-        addItemWindow.close()
     }
 
     Row {
@@ -73,7 +78,7 @@ Popup {
             width: 110
             focus: true
             placeholderText: qsTr("Amount...")
-            validator: RegExpValidator { regExp: /(?:(?!\d)[-])?\d+\.\d{0,2}/ }
+            validator: RegExpValidator { regExp: /(?:(?!\d)[-])?\d+(\,|\.)\d{0,2}/ }
         }
 
         ComboBox {

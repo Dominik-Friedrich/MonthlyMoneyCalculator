@@ -16,5 +16,7 @@
         <file>PrettyButton.qml</file>
         <file>AddItemPopup.qml</file>
         <file>PrettyText.qml</file>
+        <file>DraggableItem.qml</file>
+        <file>DraggableItemDropArea.qml</file>
     </qresource>
 </RCC>

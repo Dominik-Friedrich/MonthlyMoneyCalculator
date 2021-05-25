@@ -1,13 +1,15 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.12
 
-Component {
+DraggableItem {
+    width: mainWindow.width
+    property bool isLast: index + 1 < listView.count ? false : true
+    property alias isChecked: removeCheckBox.checked
+    property alias sAmount: amountText.text
+    visible: (listView.count === 1) ? false : true
+
     Column {
-        width: mainWindow.width
-        property bool isLast: index + 1 < listView.count ? false : true
-        property alias isChecked: removeCheckBox.checked
-        property alias sAmount: amountText.text
-        visible: (listView.count === 1) ? false : true
+        width: parent.width
 
         Row {
             width: parent.width
