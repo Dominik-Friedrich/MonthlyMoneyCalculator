@@ -65,47 +65,48 @@
         <translation>Monatsgeldrechner</translation>
     </message>
     <message>
-        <location filename="main.qml" line="109"/>
+        <location filename="main.qml" line="126"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
     <message>
-        <location filename="main.qml" line="111"/>
+        <location filename="main.qml" line="128"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="main.qml" line="113"/>
+        <location filename="main.qml" line="130"/>
         <source>German</source>
         <translation>Deutsch</translation>
     </message>
     <message>
-        <location filename="main.qml" line="119"/>
+        <location filename="main.qml" line="136"/>
         <source>English</source>
         <translation>Englisch</translation>
     </message>
     <message>
-        <location filename="main.qml" line="126"/>
+        <location filename="main.qml" line="143"/>
         <source>Reset</source>
         <translation>Zurücksetzen</translation>
     </message>
     <message>
-        <location filename="main.qml" line="130"/>
+        <location filename="main.qml" line="147"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
         <location filename="main.qml" line="20"/>
-        <source>Monthly Allowance</source>
-        <translation>monatlich Verfügbar</translation>
+        <source>Monthly allowance</source>
+        <oldsource>Monthly Allowance</oldsource>
+        <translation>Monatlich verfügbar</translation>
     </message>
     <message>
-        <location filename="main.qml" line="196"/>
+        <location filename="main.qml" line="213"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="main.qml" line="206"/>
+        <location filename="main.qml" line="223"/>
         <source>Remove</source>
         <translation>Löschen</translation>
     </message>
