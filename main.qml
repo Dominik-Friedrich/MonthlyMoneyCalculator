@@ -97,7 +97,6 @@ ApplicationWindow {
 
     Settings {
         id: settings
-        //property alias language:
         property alias x: mainWindow.x
         property alias y: mainWindow.y
         property alias monthlyAllowance: mainWindow.monthlyAllowance

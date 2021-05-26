@@ -8,37 +8,37 @@
         <translation type="obsolete">Betrag...</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="75"/>
+        <location filename="AddItemPopup.qml" line="80"/>
         <source>Amount...</source>
         <translation>Betrag...</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="82"/>
+        <location filename="AddItemPopup.qml" line="87"/>
         <source>Monthly</source>
         <translation>Monatlich</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="82"/>
+        <location filename="AddItemPopup.qml" line="87"/>
         <source>Daily</source>
         <translation>Täglich</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="82"/>
+        <location filename="AddItemPopup.qml" line="87"/>
         <source>Quartaly</source>
         <translation>Vierteljährlich</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="82"/>
+        <location filename="AddItemPopup.qml" line="87"/>
         <source>Bi-yearly</source>
         <translation>Halbjährlich</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="82"/>
+        <location filename="AddItemPopup.qml" line="87"/>
         <source>Yearly</source>
         <translation>Jährlich</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="88"/>
+        <location filename="AddItemPopup.qml" line="93"/>
         <source>Description...</source>
         <translation>Beschreibung...</translation>
     </message>
@@ -47,12 +47,12 @@
         <translation type="vanished">Beschreibung</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="98"/>
+        <location filename="AddItemPopup.qml" line="103"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="AddItemPopup.qml" line="109"/>
+        <location filename="AddItemPopup.qml" line="114"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -65,47 +65,47 @@
         <translation>Monatsgeldrechner</translation>
     </message>
     <message>
-        <location filename="main.qml" line="99"/>
+        <location filename="main.qml" line="109"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
     <message>
-        <location filename="main.qml" line="101"/>
+        <location filename="main.qml" line="111"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="main.qml" line="103"/>
+        <location filename="main.qml" line="113"/>
         <source>German</source>
         <translation>Deutsch</translation>
     </message>
     <message>
-        <location filename="main.qml" line="109"/>
+        <location filename="main.qml" line="119"/>
         <source>English</source>
         <translation>Englisch</translation>
     </message>
     <message>
-        <location filename="main.qml" line="116"/>
+        <location filename="main.qml" line="126"/>
         <source>Reset</source>
         <translation>Zurücksetzen</translation>
     </message>
     <message>
-        <location filename="main.qml" line="120"/>
+        <location filename="main.qml" line="130"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="main.qml" line="139"/>
+        <location filename="main.qml" line="20"/>
         <source>Monthly Allowance</source>
         <translation>monatlich Verfügbar</translation>
     </message>
     <message>
-        <location filename="main.qml" line="182"/>
+        <location filename="main.qml" line="196"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="main.qml" line="192"/>
+        <location filename="main.qml" line="206"/>
         <source>Remove</source>
         <translation>Löschen</translation>
     </message>

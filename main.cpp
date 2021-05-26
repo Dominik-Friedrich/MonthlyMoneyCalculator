@@ -23,18 +23,6 @@ int main(int argc, char *argv[])
     QFont googleFont(family);
     app.setFont(googleFont);
 
-
-    /*
-    QTranslator translator;
-    const QStringList uiLanguages = QLocale::system().uiLanguages();
-    for (const QString &locale : uiLanguages) {
-        const QString baseName = "MonthlyMoneyCalculator_" + QLocale(locale).name();
-        if (translator.load(":/i18n/" + baseName)) {
-            app.installTranslator(&translator);
-            break;
-        }
-    }
-    */
     QQmlApplicationEngine engine;
     TranslationHandler transHndl(&engine);
     engine.rootContext()->setContextProperty("translationHandler", &transHndl);

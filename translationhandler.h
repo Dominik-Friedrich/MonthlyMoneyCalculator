@@ -13,40 +13,10 @@ class TranslationHandler : public QObject
     Q_PROPERTY(QString emptyString READ getEmptyString NOTIFY languageChanged)
 
 public:
-    explicit TranslationHandler(QQmlEngine *engine)
-    {
-        m_translator1 = new QTranslator(this);
-        m_currentLanguage = "en";
-        m_engine = engine;
-    }
-
-    QString getEmptyString()
-    {
-        return "";
-    }
-
-    Q_INVOKABLE QString getCurrentLanguage()
-    {
-        return m_currentLanguage;
-    }
-
-    Q_INVOKABLE void selectLanguage(QString language)
-    {
-        if(language == QString("de"))
-        {
-            m_currentLanguage = language;
-            m_translator1->load(":/i18n/MonthlyMoneyCalculator_de_DE.qm");
-            qGuiApp->installTranslator(m_translator1);
-            m_engine->retranslate();
-        }
-        if(language == QString("en"))
-        {
-            m_currentLanguage = language;
-            qGuiApp->removeTranslator(m_translator1);
-            m_engine->retranslate();
-        }
-        emit languageChanged();
-    }
+    explicit TranslationHandler(QQmlEngine *engine);
+    QString getEmptyString();
+    Q_INVOKABLE QString getCurrentLanguage();
+    Q_INVOKABLE void selectLanguage(QString language);
 
 signals:
     void languageChanged();
