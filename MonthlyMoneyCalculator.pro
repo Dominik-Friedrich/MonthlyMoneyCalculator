@@ -8,11 +8,13 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
+        mysettings.cpp \
         translationhandler.cpp
 
 #lupdate_only {
 RESOURCES += qml.qrc
 #}
+RC_ICONS = appicon.ico
 
 TRANSLATIONS += \
     MonthlyMoneyCalculator_de_DE.ts
@@ -31,4 +33,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
+    mysettings.h \
     translationhandler.h
