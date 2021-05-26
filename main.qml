@@ -17,7 +17,7 @@ ApplicationWindow {
     title: qsTr("Monthly Money Calculator")
 
     property double monthlyAllowance: 0
-    property string monthlyAllowanceDesc: qsTr("Monthly Allowance")
+    property string monthlyAllowanceDesc: qsTr("Monthly allowance")
     property string datastore: ""
     property string language: "en"
     onLanguageChanged: {
@@ -29,6 +29,7 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
+        restoreSettings()
         if (datastore) {
             listModel.clear()
             var datamodel = JSON.parse(datastore)
@@ -46,6 +47,27 @@ ApplicationWindow {
             datamodel.push(listModel.get(i))
             datastore = JSON.stringify(datamodel)
         }
+        saveSettings()
+    }
+
+    function saveSettings() {
+        //mySettings.addEntry(const QString &key, const QVariant &value);
+        mySettings.addEntry("x", mainWindow.x);
+        mySettings.addEntry("y", mainWindow.y);
+        mySettings.addEntry("monthlyAllowance", mainWindow.monthlyAllowance);
+        mySettings.addEntry("datastore", mainWindow.datastore);
+        mySettings.addEntry("language", mainWindow.language);
+        mySettings.mySync()
+    }
+
+    function restoreSettings() {
+        //mySettings.getEntry(const QString &key);
+        //console.log(mySettings.getEntry("x"))
+        mainWindow.x = mySettings.getEntry("x")
+        mainWindow.y = mySettings.getEntry("y")
+        mainWindow.monthlyAllowance = mySettings.getEntry("monthlyAllowance")
+        mainWindow.datastore = mySettings.getEntry("datastore")
+        mainWindow.language = mySettings.getEntry("language")
     }
 
     function addItem(newElement) {
@@ -95,14 +117,9 @@ ApplicationWindow {
         listView.model.insert(0, {"amount": "0", "description": mainWindow.monthlyAllowanceDesc})
     }
 
-    Settings {
-        id: settings
-        property alias x: mainWindow.x
-        property alias y: mainWindow.y
-        property alias monthlyAllowance: mainWindow.monthlyAllowance
-        property alias datastore: mainWindow.datastore
-        property alias language: mainWindow.language
-    }
+
+
+
 
     menuBar: MenuBar {
         Menu {
