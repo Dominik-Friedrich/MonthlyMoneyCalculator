@@ -62,42 +62,42 @@
     <message>
         <location filename="EditItemPopup.qml" line="80"/>
         <source>Amount...</source>
-        <translation type="unfinished">Betrag...</translation>
+        <translation>Betrag...</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="87"/>
         <source>Monthly</source>
-        <translation type="unfinished">Monatlich</translation>
+        <translation>Monatlich</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="87"/>
         <source>Daily</source>
-        <translation type="unfinished">Täglich</translation>
+        <translation>Täglich</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="87"/>
         <source>Quartaly</source>
-        <translation type="unfinished">Vierteljährlich</translation>
+        <translation>Vierteljährlich</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="87"/>
         <source>Bi-yearly</source>
-        <translation type="unfinished">Halbjährlich</translation>
+        <translation>Halbjährlich</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="87"/>
         <source>Yearly</source>
-        <translation type="unfinished">Jährlich</translation>
+        <translation>Jährlich</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="93"/>
         <source>Description...</source>
-        <translation type="unfinished">Beschreibung...</translation>
+        <translation>Beschreibung...</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="109"/>
         <source>Edit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ändern</translation>
     </message>
     <message>
         <source>Add</source>
@@ -106,12 +106,12 @@
     <message>
         <location filename="EditItemPopup.qml" line="119"/>
         <source>Remove</source>
-        <translation type="unfinished">Löschen</translation>
+        <translation>Löschen</translation>
     </message>
     <message>
         <location filename="EditItemPopup.qml" line="132"/>
         <source>Cancel</source>
-        <translation type="unfinished">Abbrechen</translation>
+        <translation>Abbrechen</translation>
     </message>
 </context>
 <context>
