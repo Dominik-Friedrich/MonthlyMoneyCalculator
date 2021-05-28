@@ -2,9 +2,9 @@ import QtQuick 2.12
 import QtQuick.Controls 2.12
 
 DraggableItem {
+    id: item
     width: mainWindow.width
     property bool isLast: index + 1 < listView.count ? false : true
-    property alias isChecked: removeCheckBox.checked
     property alias sAmount: amountText.text
     visible: (listView.count === 1) ? false : true
 
@@ -17,7 +17,7 @@ DraggableItem {
             rightPadding: 25
 
             Rectangle {
-                width: parent.width - parent.leftPadding - parent.rightPadding - removeCheckBox.width
+                width: parent.width - parent.leftPadding - parent.rightPadding - editButton.width
                 height: 1
                 visible: (isLast) ? true : false
                 color: "white"
@@ -42,13 +42,18 @@ DraggableItem {
 
             PrettyText {
                 id: descriptionText
-                width: parent.width - amountText.width - 2 * parent.spacing - removeCheckBox.width - parent.leftPadding - parent.rightPadding
+                width: parent.width - amountText.width - 2 * parent.spacing - editButton.width - parent.leftPadding - parent.rightPadding
                 text: description
             }
 
-            CheckBox {
-                id: removeCheckBox
+            RoundButton {
+                id: editButton
+                text: "..."
+                anchors.verticalCenter: parent.verticalCenter
+                width: 35
+                height: 35
                 visible: (isLast) ? false : true
+                onClicked: editPopup.editItemWindow(amountText.text, descriptionText.text, index)
             }
         }
     }

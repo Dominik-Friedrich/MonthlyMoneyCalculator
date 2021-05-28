@@ -58,6 +58,63 @@
     </message>
 </context>
 <context>
+    <name>EditItemPopup</name>
+    <message>
+        <location filename="EditItemPopup.qml" line="80"/>
+        <source>Amount...</source>
+        <translation type="unfinished">Betrag...</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="87"/>
+        <source>Monthly</source>
+        <translation type="unfinished">Monatlich</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="87"/>
+        <source>Daily</source>
+        <translation type="unfinished">Täglich</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="87"/>
+        <source>Quartaly</source>
+        <translation type="unfinished">Vierteljährlich</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="87"/>
+        <source>Bi-yearly</source>
+        <translation type="unfinished">Halbjährlich</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="87"/>
+        <source>Yearly</source>
+        <translation type="unfinished">Jährlich</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="93"/>
+        <source>Description...</source>
+        <translation type="unfinished">Beschreibung...</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="109"/>
+        <source>Edit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add</source>
+        <translation type="obsolete">Hinzufügen</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="119"/>
+        <source>Remove</source>
+        <translation type="unfinished">Löschen</translation>
+    </message>
+    <message>
+        <location filename="EditItemPopup.qml" line="132"/>
+        <source>Cancel</source>
+        <translation type="unfinished">Abbrechen</translation>
+    </message>
+</context>
+<context>
     <name>main</name>
     <message>
         <location filename="main.qml" line="17"/>
@@ -65,32 +122,32 @@
         <translation>Monatsgeldrechner</translation>
     </message>
     <message>
-        <location filename="main.qml" line="126"/>
+        <location filename="main.qml" line="120"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
     <message>
-        <location filename="main.qml" line="128"/>
+        <location filename="main.qml" line="122"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="main.qml" line="130"/>
+        <location filename="main.qml" line="124"/>
         <source>German</source>
         <translation>Deutsch</translation>
     </message>
     <message>
-        <location filename="main.qml" line="136"/>
+        <location filename="main.qml" line="130"/>
         <source>English</source>
         <translation>Englisch</translation>
     </message>
     <message>
-        <location filename="main.qml" line="143"/>
+        <location filename="main.qml" line="137"/>
         <source>Reset</source>
         <translation>Zurücksetzen</translation>
     </message>
     <message>
-        <location filename="main.qml" line="147"/>
+        <location filename="main.qml" line="141"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
@@ -101,14 +158,13 @@
         <translation>Monatlich verfügbar</translation>
     </message>
     <message>
-        <location filename="main.qml" line="213"/>
+        <location filename="main.qml" line="212"/>
         <source>Add</source>
         <translation>Hinzufügen</translation>
     </message>
     <message>
-        <location filename="main.qml" line="223"/>
         <source>Remove</source>
-        <translation>Löschen</translation>
+        <translation type="vanished">Löschen</translation>
     </message>
 </context>
 </TS>

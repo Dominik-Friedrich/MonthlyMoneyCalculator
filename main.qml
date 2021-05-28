@@ -70,21 +70,15 @@ ApplicationWindow {
         mainWindow.language = mySettings.getEntry("language")
     }
 
-    function addItem(newElement) {
-        listView.model.insert(listModel.count - 1, newElement)
+    function addItem(newElement, index) {
+        listView.model.insert(index, newElement)
 
         addMonthlyAllowance(parseDouble(newElement.amount))
     }
 
-    function removeItems() {
-        for (var i = listView.count - 1; i >= 0; i--)
-        {
-            if (listView.itemAt(i).isChecked)
-            {
-                subMonthlyAllowance(parseDouble(listView.itemAt(i).sAmount))
-                listModel.remove(i)
-            }
-        }
+    function removeItem(index) {
+        subMonthlyAllowance(parseDouble(listView.itemAt(index).sAmount))
+        listModel.remove(index)
     }
 
     function addMonthlyAllowance(val)
@@ -151,7 +145,11 @@ ApplicationWindow {
     }
 
     AddItemPopup {
-        id: popup
+        id: addPopup
+    }
+
+    EditItemPopup {
+        id: editPopup
     }
 
     Column {
@@ -201,28 +199,19 @@ ApplicationWindow {
 
             Row {
                 width: parent.width
-                spacing: (width - addButton.width - addButton.width) / 3
-                leftPadding: spacing
-                rightPadding: spacing
+                //spacing: (width - addButton.width - addButton.width) / 3
+                //leftPadding: spacing
+                //rightPadding: spacing
 
                 // Add Button
                 PrettyButton {
                     id: addButton
                     anchors.verticalCenter: parent.verticalCenter
+                    width: parent.width
 
                     text: qsTr("Add")
 
-                    onClicked: popup.open()
-                }
-
-                // Remove Button
-                PrettyButton {
-                    id: removeButton
-                    anchors.verticalCenter: parent.verticalCenter
-
-                    text: qsTr("Remove")
-
-                    onClicked: removeItems()
+                    onClicked: addPopup.open()
                 }
             }
         }

@@ -19,5 +19,6 @@
         <file>DraggableItemDropArea.qml</file>
         <file>DraggableItem.qml</file>
         <file>appicon.ico</file>
+        <file>EditItemPopup.qml</file>
     </qresource>
 </RCC>

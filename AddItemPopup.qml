@@ -52,7 +52,7 @@ Popup {
         }
         _amount = Math.round(_amount * 100) / 100
 
-        mainWindow.addItem({"amount": _amount.toString(), "description": description.text})
+        mainWindow.addItem({"amount": _amount.toString(), "description": description.text}, listModel.count - 1)
         addItemWindow.close()
     }
 
@@ -98,7 +98,7 @@ Popup {
     PrettyButton {
         anchors.bottom: parent.bottom
         anchors.left: parent.left
-        width: 150
+        width: 130
 
         text: qsTr("Add")
 
@@ -109,7 +109,7 @@ Popup {
     PrettyButton {
         anchors.bottom: parent.bottom
         anchors.right: parent.right
-        width: 150
+        width: 130
 
         text: qsTr("Cancel")
 
